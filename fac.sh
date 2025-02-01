@@ -13,7 +13,7 @@ if ! [[ "$num" =~ ^[0-9]+$ ]]; then
 fi
 
 # Calculate factorial
-fact=1
+fact=1 
 
 while [ $num -gt 1 ]; do
   fact=$((fact * num))
