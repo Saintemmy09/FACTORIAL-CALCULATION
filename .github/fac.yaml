@@ -1,0 +1,25 @@
+name: FACTORIAL CALCULATION
+
+on:
+  workflow_dispatch:
+    inputs:
+      number_input:
+        type: string
+        required: true
+        description: "Enter a number to calculate the factorial"
+
+jobs:
+  run-fac-script:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Make script executable
+      run: chmod +x fac.sh
+
+    - name: Run fac script
+      run: |
+        output=$(./fac.sh ${{ inputs.number_input }})
+        echo "The factorial output is: $output"
+ 
